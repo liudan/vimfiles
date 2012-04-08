@@ -113,7 +113,7 @@ nnoremap <Leader>r :source $MYVIMRC<CR>
 "
 " Hide all gui components,
 " Show line information and highlight current line.
-set guioptions= number ruler showcmd cursorline
+set guioptions= number ruler showcmd cursorline cursorcolumn
 
 set scrolloff=3 cmdheight=2 laststatus=2
 
@@ -193,10 +193,13 @@ nnoremap <silent> <F5> :nohlsearch<Bar>:echo<CR>
 vnoremap * y/<C-R>"<CR>
 vnoremap # y?<C-R>"<CR>
 nnoremap <silent> <F2> /[^\x00-\x7f]<CR>
+"nnoremap <F10> :s/<\(\/\*\)div\(\w\*\)><\(\/\*\)div\(\w\*\)>/<\1div\2>\r<\3div\4>/g<CR>
+"nnoremap <F10> :s/<\(\/*\)div\(.*\)><\(\/*\)div\(.*\)>/<\1div\2><\3div\4>/g<CR>
+nnoremap <F10> :%s/>\s*</>\r</g<CR>
 " Delete all last blank charactors for each line
-nnoremap <F12> :%s/[ \t\r]\+$//g<CR>
+nnoremap <F11> :%s/[ \t\r]\+$//g<CR>
 " Indent entire document
-nnoremap <F11> ggVG=
+nnoremap <F12> ggVG=
 
 " NERDTree plugin
 let NERDTreeQuitOnOpen=1
