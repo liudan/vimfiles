@@ -177,6 +177,10 @@ exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 
 " Use CTRL-Q to do what CTRL-V used to do
 noremap <C-Q> <C-V>
+" Use CTRL-Up to do what CTRL-A used to do
+noremap <C-Up> <C-A>
+" Use CTRL-Down to do what CTRL-X used to do
+noremap <C-Down> <C-X>
 
 " CTRL-A is Select all
 noremap <C-A> ggVG
@@ -206,6 +210,7 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeChDirMode=2
 nnoremap <Leader>ff :NERDTree<Space>
 nnoremap <Leader>tt :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeToggle<CR>
 
 " Move cursor in insert mode
 inoremap <C-H> <Left>
